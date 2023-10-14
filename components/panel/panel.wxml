@@ -1,0 +1,20 @@
+<view class="panel">
+  <view class="panel_item" wx:for="{{panelList}}" wx:key="index">
+    <view class="panel_right">
+      <view class="panel_right_img">
+        <image src="{{item.imgUrl}}" class="panel_right_img_pic" />
+      </view>
+    </view>
+    <view class="panel_left">
+      <view class="panel_content">
+        <view class="panel_list panel_title">{{item.title}}</view>
+        <view class="panel_list panel_apply">{{item.apply}} 报名</view>
+        <view class="panel_list panel_category">{{item.category}}</view>
+        <view class="panel_list panel_time">{{item.time}}</view>
+        <view class="panel_list panel_area">{{item.area}}</view>
+      </view>
+      <view class="btn">点击报名</view>
+      <!-- <view class="btn btn_act">已参加</view> -->
+    </view>
+  </view>
+</view>

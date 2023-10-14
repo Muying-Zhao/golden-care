@@ -1,0 +1,73 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/publish/publish",
+    "pages/apply/apply",
+    "pages/login/login",
+    "pages/mine/mine",
+    "pages/yufang/yufang",
+    "pages/set/set",
+    "pages/my-activity/my-activity",
+    "pages/problem/problem",
+    "pages/activity-detail/activity-detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#6faf92",
+    "navigationBarTitleText": "守望相助帮扶老人",
+    "navigationBarTextStyle": "black",
+    "backgroundColorBottom": "#efefef"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#6faf92",
+    "color": "#8a8a8a",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "./images/tab_bar/home.png",
+        "selectedIconPath": "./images/tab_bar/home_selected.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布",
+        "iconPath": "./images/tab_bar/publish.png",
+        "selectedIconPath": "./images/tab_bar/publish_selected.png"
+      },
+      {
+        "pagePath": "pages/apply/apply",
+        "text": "活动",
+        "iconPath": "./images/tab_bar/message.png",
+        "selectedIconPath": "./images/tab_bar/message_selected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "./images/tab_bar/mine.png",
+        "selectedIconPath": "./images/tab_bar/mine_selected.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "i-avatar": "/components/avatar/avatar",
+    "i-button": "/components/button/button",
+    "i-icon": "/components/icon/icon",
+    "i-image-uploader": "/components/image-uploader/image-uploader",
+    "i-tabs": "/components/tabs/tabs",
+    "i-tabs-act": "/components/tabs-act/tabs-act",
+    "i-panel": "/components/panel/panel",
+    "i-safe-area":"/components/safe-area/safe-area",
+    "i-show-status":"/components/show-status/show-status",
+    "mp-msg": "weui-miniprogram/msg/msg",
+    "mp-form": "weui-miniprogram/form/form",
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "mp-cells": "weui-miniprogram/cells/cells",
+    "mp-toptips": "weui-miniprogram/toptips/toptips"
+  },
+  "useExtendedLib": {
+    "weui": true
+  }
+}

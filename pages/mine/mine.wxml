@@ -1,0 +1,31 @@
+<view class="container">
+  <!-- <view class="header" wx:if="{{isLogin}}">
+    <i-avatar  shape="circle" fontSize="34" src="{{userInfo.avatar}}" text="{{userInfo.nickname}}" bind:tap="handleCheck" >
+    </i-avatar>
+  </view> -->
+  <view class="header">
+    <i-avatar  shape="circle" fontSize="34" src="{{userInfo.avatar}}" text="{{userInfo.nickname}}" bind:tap="handleToLogin" >
+    </i-avatar>
+  </view>
+  <view class="banner">
+    <view class="content">
+      <view class="content_item" wx:for="{{bannerList}}" wx:key="index" bind:tap="handleBannerList" data-role="{{item.role}}" data-status="{{item.status}}" data-type="{{item.type}}">
+        <view class="content_item_img">
+          <image src="{{item.imgUrl}}" class="content_item_img_pic" mode="widthFix" />
+        </view>
+        <view class="content_item_title">{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="main">
+    <view class="main_item" wx:for="{{categoryList}}" wx:key="index">
+     <view class="main_item_icon">
+       <image src="{{item.imgIcon}}" mode="widthFix" class="main_item_icon_pic"/>
+     </view>
+     <view class="main_item_text">{{item.text}}</view>
+     <view class="main_item_img">
+      <image class="main_item_img_pic" src="{{item.imgUrl}}" mode="widthFix"/>
+     </view>
+    </view>
+  </view>
+</view>

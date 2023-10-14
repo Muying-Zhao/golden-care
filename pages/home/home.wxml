@@ -1,0 +1,18 @@
+<view class="layout">
+  <view class="slider" slot="slot_tabs">
+    <view class="slider_item">
+      <image class="slider_item_pic" src="../../images/slider/baoxian.jpeg" />
+    </view>
+    <view class="slider_item">
+      <image class="slider_item_pic" src="../../images/slider/huli.jpg" />
+    </view>
+    <view class="slider_item">
+      <image class="slider_item_pic" src="../../images/slider/tijian.jpg" />
+    </view>
+    <view class="slider_item" bind:tap="handleYuFang">
+      <image class="slider_item_pic" src="../../images/slider/yufang.jpg" />
+    </view>
+  </view>
+  <i-tabs tabsList="{{tabsList}}" bind:checkTab="handleCheckTab"></i-tabs>
+  <i-panel panelList="{{panelList}}"></i-panel>
+</view>

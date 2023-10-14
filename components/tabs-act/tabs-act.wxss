@@ -1,0 +1,38 @@
+.tabs {
+  margin-top: -5rpx;
+  width: 100%;
+  height: 130rpx;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx 0 30rpx;
+}
+
+.tabs_items {
+  display: flex;
+  height: 110rpx;
+}
+
+.tabs_item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabs_item_labe {
+  line-height: 80rpx;
+  color: #696969;
+  font-weight: bold;
+  /* color: #696969; */
+}
+.tabs_item_labe-active{
+  color: #6faf92;
+}
+
+.divider {
+  height: 6rpx;
+  width: 60rpx;
+  background: #6faf92;
+  border-radius: 5rpx;
+}

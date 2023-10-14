@@ -1,0 +1,25 @@
+<view class="wrapper">
+  <view class="hed">
+    <image src="../../images/slider/yufang.jpg" class="hed_pic" mode="widthFix" />
+  </view>
+  <view class="main">
+    <view class="main_title">
+      <view class="main_title_dot main_title_dot-left"></view>
+      以下为防诈小贴士
+      <view class="main_title_dot main_title_dot-right"></view>
+    </view>
+    <view class="main_img">
+      <image src="../../images/slider/notice.jpg" class="main_img_pic" mode="widthFix" />
+    </view>
+    <view class="main_content">
+      <view class="main_content_word" wx:for="{{wordList}}" wx:key="index">
+        <view class="main_content_word_title">{{item.title}}</view>
+        <view class="main_content_word_text">{{item.text}}</view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="bar"></view>
+    <i-safe-area area="bottom"></i-safe-area>
+  </view>
+</view>

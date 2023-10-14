@@ -1,0 +1,35 @@
+/* height: 100%;是相对于父元素的，即使最外层标签了，其实还有一个page标签 */
+page{
+  background: #fff;
+}
+.layout {
+  height: 100%;
+  background: #fff;
+}
+/* 轮播图 */
+.slider {
+  scroll-snap-type: x mandatory;
+  /* 溢出部分自动 */
+  overflow: auto;
+  /* 使元素不换行 */
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.slider_item {
+  /* 块级元素变成行内元素，变成行内元素后宽度就失效了 */
+  display: inline-block;
+  height: 350rpx;
+  /* 行内元素对齐父盒子方式  */
+  scroll-snap-align: center;
+  /* 必须不能跳过，使其只能一个一个进行  */
+  scroll-snap-stop: always;
+  width: 100%;
+}
+.slider_item_pic{
+  width: 100%;
+  height: 100%;
+}
+
+
+

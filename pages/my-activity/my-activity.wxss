@@ -1,0 +1,7 @@
+page{
+  background: #fff;
+}
+.layout {
+  height: 100%;
+  background: #fff;
+}
