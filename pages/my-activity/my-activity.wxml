@@ -1,4 +1,0 @@
-<view class="layout">
-  <i-tabs-act tabsList="{{actList}}" bind:change="handleTabChange"></i-tabs-act>
-  <i-panel panelList="{{panelList}}"></i-panel>
-</view>

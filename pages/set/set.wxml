@@ -1,2 +1,15 @@
-<!--pages/set/set.wxml-->
-<text>pages/set/set.wxml</text>
+<view class="sz">
+  <image src="../../images/slider/yufang.jpg" class="sz_pic" bind:tap="handleYufang"/>
+  <view class="sz_para" bindtap="authInfo">
+    <view class="sz_para_text">关于</view>
+    <view class="sz_para_icon">
+      <i-icon name="right" size="35" color="#9da1b1"></i-icon>
+    </view>
+  </view>
+  <view class="sz_para" bindtap="logout">
+    <view class="sz_para_text">退出登录</view>
+    <view class="sz_para_icon">
+      <i-icon name="right" size="35" color="#9da1b1"></i-icon>
+    </view>
+  </view>
+</view>

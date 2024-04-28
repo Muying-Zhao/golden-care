@@ -1,1 +1,39 @@
-/* pages/set/set.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #f3f3f3;
+}
+.sz{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.sz_pic{
+  width: 100%;
+  height: 400rpx;
+}
+.sz_para{
+  width: 100%;
+  height: 122rpx;
+  background-color: #ffffff;
+  border-bottom: 3rpx solid #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30rpx;
+}
+.sz_para_text{
+  width: 20%;
+  height: 122rpx;
+  line-height: 122rpx;
+  color: #292929;
+  font-size: 32rpx;
+  font-weight: 400;
+}
+.sz_para_icon{
+  width: 10%;
+  height: 40rpx;
+}
+.sz_para_icon_pic{
+  width: 35rpx;
+}

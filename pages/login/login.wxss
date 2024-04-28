@@ -37,8 +37,21 @@ page{
 
 .btn_toback_home{
   margin-top: 30rpx;
+  color: #333;
+  font-size: 34rpx;
+  width: 260rpx;
+  line-height: 100rpx;
+  height: 100rpx;
+}
+button::after{
+  border: none;
 }
 
 .btn_login{
   background:#6faf92 ;
+  color: #333;
+  font-size: 34rpx;
+  width: 260rpx;
+  line-height: 100rpx;
+  height: 100rpx;
 }

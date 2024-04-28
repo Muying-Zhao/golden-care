@@ -1,7 +1,4 @@
-import {
-  wxToPromise
-} from "./wx";
-import APIConfig from "../config/api";
+import {wxToPromise} from "./wx";
 import Http from "./http";
 
 
@@ -10,7 +7,7 @@ class FileUploader extends Http {
     let res
     try {
       res = await wxToPromise('uploadFile', {
-        url: APIConfig.baseUrl + '/v1/file',
+        url: 'https://qinchenju.com/homemaking//v1/file',
         filePath: filePath,
         name: key,
       })

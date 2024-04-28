@@ -1,5 +1,5 @@
 <view class="panel">
-  <view class="panel_item" wx:for="{{panelList}}" wx:key="index">
+  <view class="panel_item" wx:for="{{panelList}}" wx:key="index" bind:tap="handlePanelItem" data-id="{{item.id}}">
     <view class="panel_right">
       <view class="panel_right_img">
         <image src="{{item.imgUrl}}" class="panel_right_img_pic" />
@@ -13,8 +13,16 @@
         <view class="panel_list panel_time">{{item.time}}</view>
         <view class="panel_list panel_area">{{item.area}}</view>
       </view>
-      <view class="btn">点击报名</view>
-      <!-- <view class="btn btn_act">已参加</view> -->
+      <view class="status" wx:if="{{tabsName}}">
+        <view class="status_btn status_btn-sign" wx:if="{{item.status==='报名中'}}">{{item.status}}</view>
+        <view class="status_btn " wx:if="{{item.status==='进行中'}}">{{item.status}}</view>
+        <view class="status_btn status_btn-end" wx:if="{{item.status==='已结束'}}">{{item.status}}</view>
+      </view>
+      <view class="status" wx:if="{{tabName}}">
+        <image class="status_icon" wx:if="{{tabName==='underway'}}" src="../../images/my_activity/ongoing.png" mode="widthFix"/>
+        <image class="status_icon" wx:if="{{tabName==='finished'}}" src="../../images/my_activity/finished.png" mode="widthFix"/>
+        <image class="status_icon" wx:if="{{tabName==='cancel'}}" src="../../images/my_activity/cancel.png" mode="widthFix"/>
+      </view>
     </view>
   </view>
 </view>

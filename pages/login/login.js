@@ -5,10 +5,8 @@ Page({
    * 页面的初始数据
    */
   data:{
-    userInfo: {
       nickname: '守望相助',
-      avatar: '../../images/login/login_theme.png'
-    },
+      avatar: '../../images/login.png'
   },
 
   /**
@@ -22,6 +20,7 @@ Page({
     const res = await wx.getUserProfile({
       desc: '完善用户信息',
     })
+    // console.log(res.userInfo,'userInfo')
     wx.showLoading({
       title: '正在授权',
       mask:true
@@ -31,8 +30,11 @@ Page({
 
     // try用于捕获操作异常
     try {
-      const isLogin=true
+      console.log(res,'res')
+      const userInfo=res.userInfo
+      let isLogin=true
       wx.setStorageSync('isLogin', isLogin)
+      wx.setStorageSync('userInfo', userInfo)
       wx.navigateBack()
     }catch(e){
       wx.showModal({

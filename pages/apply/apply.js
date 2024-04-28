@@ -1,4 +1,3 @@
-// pages/apply/apply.js
 Page({
 
   /**
@@ -7,84 +6,33 @@ Page({
   data: {
     actList:[{
       "id": 1,
-      "title":"报名中"
+      "title":"消息",
+      "name":"news"
     },{
       "id": 2,
-      "title":"进行中"
-    },{
-      "id": 3,
-      "title":"已结束"
+      "title":"待办",
+      "name":"backlog"
     }],
-    panelList: [{
-      "id": 1,
-      "imgUrl": "../../images/slider/baoxian.jpeg",
-      "title": "养老资料整理",
-      "apply": 0,
-      "category": "活动类型",
-      "time": "time",
-      "aera": "活动地点",
-    }, {
-      "id": 2,
-      "imgUrl": "../../images/slider/huli.jpg",
-      "title": "养老资料整理",
-      "apply": 0,
-      "category": "活动类型",
-      "time": "time",
-      "aera": "活动地点",
-    }, {
-      "id": 3,
-      "imgUrl": "../../images/slider/tijian.jpg",
-      "title": "养老资料整理",
-      "apply": 0,
-      "category": "活动类型",
-      "time": "time",
-      "aera": "活动地点",
-    }, {
-      "id": 4,
-      "imgUrl": "../../images/slider/yufang.jpg",
-      "title": "养老资料整理",
-      "apply": 0,
-      "category": "活动类型",
-      "time": "time",
-      "aera": "活动地点",
-    }, {
-      "id": 5,
-      "imgUrl": "../../images/slider/baoxian.jpeg",
-      "title": "养老资料整理",
-      "apply": 0,
-      "category": "活动类型",
-      "time": "time",
-      "aera": "活动地点",
-    }, {
-      "id": 6,
-      "imgUrl": "../../images/slider/baoxian.jpeg",
-      "title": "养老资料整理",
-      "apply": 0,
-      "category": "活动类型",
-      "time": "time",
-      "aera": "活动地点",
-    }, {
-      "id": 7,
-      "imgUrl": "../../images/slider/baoxian.jpeg",
-      "title": "养老资料整理",
-      "apply": 0,
-      "category": "活动类型",
-      "time": "time",
-      "aera": "活动地点",
-    }],
+    panelList: [],
+    tabName:"news",
+    currentTabIndex:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-
+  async onLoad(options) {
+    
   },
 
   handleTabChange:function(event){
-    const tabIndex= event.detail.index
-    console.log(tabIndex,645)
+    const tabName= event.detail.name
+    this.setData({
+      tabName
+    })
   },
+
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,0 +1,51 @@
+<view class="wrapper">
+  <view class="service">
+    <view class="info">
+      <view class="info_img">
+        <image src="{{res.cover_image}}" mode="widthFix" />
+      </view>
+      <view class="info_row">
+        <view class="info_row_title">{{res.title}}</view>
+        <view class="info_row_category">
+          <i-icon name="biaoqian" color="#2ba245"></i-icon>
+          <view class="info_row_category_text">{{res.category}}</view>
+        </view>
+      </view>
+      <view class="info_row">
+        <view class="info_row_publisher">
+          <i-avatar shape="circle" src="{{res.publish_acatar}}" text="{{res.nickname}}" size="60">
+          </i-avatar>
+        </view>
+      </view>
+      <view class="info_row">
+        <view class="info_row_time">{{res.begin_date}}</view>
+      </view>
+      <view class="info_row row_space_between">
+        <view class="info_row_price">
+          <text class="info_row_price_label">￥</text>{{res.price}}
+        </view>
+        <view class="info_row_volume">已售 {{res.solded}}
+        </view>
+      </view>
+      <view class="info_row">
+        <view class="info_row_description">
+          {{res.description}}
+        </view>
+      </view>
+    </view>
+    <view class="evaluation">
+      <view class="evaluation_title">历史评价</view>
+      <view >
+        <i-show-status show top="150" content="暂时还没有任何评价"></i-show-status>
+      </view>
+    </view>
+  </view>
+  <view class="actbar">
+    <view class="actbar_item">
+      <!--  i-button-class="test" -->
+      <i-button shape="semicircle" bindtap="handleOrder">立即预约</i-button>
+    </view>
+    <!-- iPhone10以后才有的安全区域问题，安卓还没有 -->
+    <i-safe-area area="bottom"></i-safe-area>
+  </view>
+</view>

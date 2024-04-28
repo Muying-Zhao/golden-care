@@ -3,18 +3,29 @@
     "pages/home/home",
     "pages/publish/publish",
     "pages/apply/apply",
-    "pages/login/login",
     "pages/mine/mine",
     "pages/yufang/yufang",
-    "pages/set/set",
-    "pages/my-activity/my-activity",
+    "pages/service/service",
+    "pages/service-detail/service-detail",
+    "pages/register/register",
+    "pages/register-form/register-form",
+    "pages/order-success/order-success",
+    "pages/publisher-success/publisher-success",
+    "pages/honor/honor",
+    "pages/evaluate/evaluate",
+    "pages/login/login",
     "pages/problem/problem",
-    "pages/activity-detail/activity-detail"
+    "pages/set/set",
+    "pages/explain/explain",
+    "pages/my-publish/my-publish",
+    "pages/my-order/my-order",
+    "pages/my-service/my-service",
+    "pages/timecoin/timecoin"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#6faf92",
-    "navigationBarTitleText": "守望相助帮扶老人",
+    "navigationBarTitleText": "优选养老",
     "navigationBarTextStyle": "black",
     "backgroundColorBottom": "#efefef"
   },
@@ -37,7 +48,7 @@
       },
       {
         "pagePath": "pages/apply/apply",
-        "text": "活动",
+        "text": "消息",
         "iconPath": "./images/tab_bar/message.png",
         "selectedIconPath": "./images/tab_bar/message_selected.png"
       },
@@ -49,23 +60,27 @@
       }
     ]
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
     "i-avatar": "/components/avatar/avatar",
     "i-button": "/components/button/button",
     "i-icon": "/components/icon/icon",
+    "i-blear":"/components/blear/blear",
+
+
     "i-image-uploader": "/components/image-uploader/image-uploader",
     "i-tabs": "/components/tabs/tabs",
     "i-tabs-act": "/components/tabs-act/tabs-act",
     "i-panel": "/components/panel/panel",
     "i-safe-area":"/components/safe-area/safe-area",
     "i-show-status":"/components/show-status/show-status",
+    
     "mp-msg": "weui-miniprogram/msg/msg",
     "mp-form": "weui-miniprogram/form/form",
     "mp-cell": "weui-miniprogram/cell/cell",
     "mp-cells": "weui-miniprogram/cells/cells",
-    "mp-toptips": "weui-miniprogram/toptips/toptips"
+    "mp-toptips": "weui-miniprogram/toptips/toptips",
+    "van-picker": "@vant/weapp/picker/index"
   },
   "useExtendedLib": {
     "weui": true

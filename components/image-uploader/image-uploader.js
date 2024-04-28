@@ -100,6 +100,7 @@ Component({
         sizeType: this.data.sizeType,
         sourceType: this.data.sourceType,
       })
+      // console.log(res,'res')
       this.triggerEvent('choose', {
         files: res.tempFiles
       })
@@ -108,7 +109,6 @@ Component({
       this.setData({
         _files: _files
       })
-
       const uploadTask = _files.filter(item => item.status === this.data.uploadStatusEnum.UPLOADING)
       this._executeUpload(uploadTask)
 
@@ -140,6 +140,7 @@ Component({
     },
 
     async _executeUpload(uploadTask) {
+      console.log(uploadTask,'uploadTask')
       const success = []
       for (const file of uploadTask) {
 
@@ -150,6 +151,7 @@ Component({
           file.status = this.data.uploadStatusEnum.SUCCESS
           this.data._files[file.key] = file
           success.push(file)
+          console.log(1)
         } catch (e) {
           file.status = this.data.uploadStatusEnum.ERROR
           file.error = e

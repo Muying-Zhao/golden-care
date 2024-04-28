@@ -1,4 +1,22 @@
 <view class="layout">
-  <i-tabs-act tabsList="{{actList}}" bind:change="handleTabChange"></i-tabs-act>
-  <i-panel panelList="{{panelList}}"></i-panel>
+  <view class="plain">
+    <view class="plain__item">
+      <view class="plain__item__icon  plain__item__icon-icon3">
+        <i-icon name="shenhe" color="#ffffff" size="55"></i-icon>
+      </view>
+      <view class="plain__item__title">审核通知</view>
+    </view>
+    <view class="plain__item">
+      <view class="plain__item__icon">
+       <i-icon name="xiaoxitongzhitixinglingshenglingdang" color="#ffffff" size="55"></i-icon>
+      </view>
+      <view class="plain__item__title">服务提醒</view>
+    </view>
+    <view class="plain__item">
+      <view class="plain__item__icon plain__item__icon-icon2">
+       <i-icon name="xiaolaba" color="#ffffff" size="55"></i-icon>
+      </view>
+      <view class="plain__item__title">系统消息</view>
+    </view>
+  </view>
 </view>

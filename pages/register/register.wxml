@@ -1,0 +1,14 @@
+<view class="wrapper">
+  <view class="register">
+   <view class="register__item">
+     <image class="register__item__icon" src="../../images/older.png" mode=""/>
+     <view class="register__item__card">服务对象</view>
+     <view class="register__item__btn" bind:tap="handleRegister" data-type="2">注册</view>
+   </view>
+   <view class="register__item">
+     <image class="register__item__icon register__item__icon2" src="../../images/zhiyuanzhe.png" mode=""/>
+     <view class="register__item__card">志愿者</view>
+     <view class="register__item__btn" bind:tap="handleRegister" data-type="1">注册</view>
+   </view>
+  </view>
+</view>

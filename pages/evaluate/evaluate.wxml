@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="header">
+    <view class="header_title">常见问题</view>
+    <i-icon class="header_img" name="wenhao" size="35" color="#2d334e"></i-icon>
+  </view>
+  <view class="main">
+    <van-collapse value="{{activeNames }}" bind:change="onChange">
+      <van-collapse-item name="{{item.id}}" wx:for="{{serveList}}" wx:key="index">
+        <view slot="icon">
+          <i-icon class="main_item_question" name="wen" size="50" color="#ff7c7c"></i-icon>
+        </view>
+        <view class="main_item_title" slot="title">{{item.title}}</view>
+        <view class="main_list">
+          <view class="main_list_slove">
+            <i-icon color="#44d19b" size="50" name="da"></i-icon>
+          </view>
+          <view class="main_list_text">{{item.content}}</view>
+        </view>
+      </van-collapse-item>
+    </van-collapse>
+    <view class="main_contain">
+    <view class="main_contain_title">没有找到您的问题，请联系客服</view>
+    <button class="main_contain_btn"
+    open-type="contact" hover-class="btn-hover">联系客服</button>
+    </view>
+  </view>
+  <view class="safe">
+    <i-safe-area area="bottom"></i-safe-area>
+  </view>
+</view>

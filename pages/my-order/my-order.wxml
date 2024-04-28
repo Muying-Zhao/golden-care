@@ -1,0 +1,25 @@
+<view class="layout">
+  <i-tabs-act currentTabIndex="{{currentTabIndex}}" tabsList="{{actList}}" bind:change="handleTabChange"></i-tabs-act>
+  <view class="panel" wx:if="{{panelList.length}}">
+    <view class="panel__item" wx:for="{{panelList}}" wx:key="index">
+      <view class="panel__item__info">
+        <i-avatar shape="circle" size="80" fontSize="34" src="../../images/default-avatar.jpeg" text="{{nickname}}">
+        </i-avatar>
+        <view class="panel__item__info__status">{{item.status}}</view>
+      </view>
+      <view class="panel__item__main">
+        <image class="panel__item__main__pic" src="{{item.cover_image}}"/>
+        <view class="panel__item__main__info">
+          <view class="panel__item__main__info__title">{{item.title}}</view>
+          <view class="panel__item__main__info__price">￥<span class="panel__item__main__info__price__num">{{item.price}}</span></view>
+        </view>
+      </view>
+      <view class="panel__item__footer">
+       <view class="panel__item__footer__status">取消预约</view>
+      </view>
+    </view>
+  </view>
+  <view class="emp" wx:else>
+    暂时还没有任何服务
+  </view>
+</view>

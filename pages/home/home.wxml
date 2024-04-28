@@ -1,18 +1,98 @@
 <view class="layout">
+  <view class="header">
+    <view class="header__city" bind:tap="handleSelectCity">{{selectedCity}}
+      <span class="header__tri"></span>
+    </view>
+    <view class="header__search">
+      <i-icon name="search1" size="32" color="#666666" class="header__search__pic"></i-icon>
+      <input placeholder="搜索感兴趣的养老志愿服务" class="header__search__text" type="text" placeholder-class="header__search__text-placeholder" bindinput="handleInputSearch" />
+    </view>
+  </view>
   <view class="slider" slot="slot_tabs">
-    <view class="slider_item">
-      <image class="slider_item_pic" src="../../images/slider/baoxian.jpeg" />
-    </view>
-    <view class="slider_item">
-      <image class="slider_item_pic" src="../../images/slider/huli.jpg" />
-    </view>
-    <view class="slider_item">
-      <image class="slider_item_pic" src="../../images/slider/tijian.jpg" />
-    </view>
     <view class="slider_item" bind:tap="handleYuFang">
       <image class="slider_item_pic" src="../../images/slider/yufang.jpg" />
     </view>
+    <view class="slider_item" bind:tap="handleServiceSeek" data-cur="1">
+      <image class="slider_item_pic" src="../../images/slider/baoxian.jpeg" />
+    </view>
+    <view class="slider_item" bind:tap="handleServiceSeek" data-cur="2">
+      <image class="slider_item_pic" src="../../images/slider/huli.jpg" />
+    </view>
+    <view class="slider_item">
+      <image class="slider_item_pic" bind:tap="handleServiceSeek" data-cur="3" src="../../images/slider/tijian.jpg" />
+    </view>
+    
   </view>
-  <i-tabs tabsList="{{tabsList}}" bind:checkTab="handleCheckTab"></i-tabs>
-  <i-panel panelList="{{panelList}}"></i-panel>
+  <view class="nav">
+    <view class="nav__item" bind:tap="handlePublish">
+      <image src="../../images/publish.png" class="nav__item__pic" />
+      <view class="nav__item__title">发布服务</view>
+    </view>
+    <view class="nav__item" bind:tap="handleService" data-type="{{1}}">
+      <image src="../../images/serve.png" class="nav__item__pic" />
+      <view class="nav__item__title">提供服务</view>
+    </view>
+    <view class="nav__item" bind:tap="handleService" data-type="{{2}}">
+      <image src="../../images/find.png" class="nav__item__pic" />
+      <view class="nav__item__title">寻找服务</view>
+    </view>
+  </view>
+  <view class="register" bind:tap="handleRegister">
+    <image class="register__pic" src="../../images/register.png" mode="" />
+  </view>
+  <view class="recommend">
+    <view class="recommend__title">
+      <view class="recommend__title__emp"></view>
+      为您推荐
+    </view>
+    <view class="recommend__content">
+      <view class="recommend__item" bind:tap="handleServiceDetail" data-cur="3">
+        <view class="recommend__item__type">提供</view>
+        <view class="recommend__item__category">送餐</view>
+        <view class="recommend__item__title">送餐</view>
+        <image class="recommend__item__pic" src="../../images/delivered.jpg" mode="" />
+        <view class="recommend__item__userInfo">
+            <image class="recommend__item__userInfo__avatar" src="../../images/default-avatar.jpeg" mode=""/>
+          <view class="recommend__item__userInfo___nickname">小炑</view>
+        </view>
+        <view class="recommend__item__datetime">02-26 9:00</view>
+      </view>
+      <view class="recommend__item" bind:tap="handleServiceDetail" data-cur="2">
+        <view class="recommend__item__type">提供</view>
+        <view class="recommend__item__category">文体活动</view>
+        <view class="recommend__item__title">下棋</view>
+        <image class="recommend__item__pic" src="../../images/literaryform.jpg" mode="" />
+        <view class="recommend__item__userInfo">
+            <image class="recommend__item__userInfo__avatar" src="../../images/default-avatar.jpeg" mode=""/>
+          <view class="recommend__item__userInfo___nickname">小炑</view>
+        </view>
+        <view class="recommend__item__datetime">02-23 11:00</view>
+      </view>
+      <view class="recommend__item" bind:tap="handleServiceDetail" data-cur="0">
+        <view class="recommend__item__type">提供</view>
+        <view class="recommend__item__category">陪伴聊天</view>
+        <view class="recommend__item__title">情感慰藉</view>
+        <image class="recommend__item__pic" src="../../images/chat.jpg" mode="" />
+        <view class="recommend__item__userInfo">
+            <image class="recommend__item__userInfo__avatar" src="../../images/default-avatar.jpeg" mode=""/>
+          <view class="recommend__item__userInfo___nickname">小炑</view>
+        </view>
+        <view class="recommend__item__datetime">02-22 11:00</view>
+      </view>
+      <view class="recommend__item" bind:tap="handleServiceDetail" data-cur="1">
+        <view class="recommend__item__type">提供</view>
+        <view class="recommend__item__category">健康宣传</view>
+        <view class="recommend__item__title">健康咨询</view>
+        <image class="recommend__item__pic" src="../../images/health.jpg" mode="" />
+        <view class="recommend__item__userInfo">
+            <image class="recommend__item__userInfo__avatar" src="../../images/default-avatar.jpeg" mode=""/>
+          <view class="recommend__item__userInfo___nickname">小炑</view>
+        </view>
+        <view class="recommend__item__datetime">02-18 14:00</view>
+      </view>
+    </view>
+  </view>
 </view>
+<i-blear blearHeight="600" wx:if="{{isShowSelcetCity}}" bind:closeblear="handleCloseSelectCity">
+  <van-picker show-toolbar title="区域" bind:cancel="onCancel" bind:confirm="onConfirm" columns="{{ columns }}" bind:change="onChange" />
+</i-blear>

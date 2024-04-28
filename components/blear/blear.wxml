@@ -1,0 +1,7 @@
+<view class="blear" bind:tap="handleCloseBlear" style="background:{{clearShadow?'none':'rgba(0,0,0,.7)'}} ;">
+  <view class="mock" style="height: {{blearHeight}}rpx; " catchtap>
+    <view class="mock_main">
+      <slot></slot>
+    </view>
+  </view>
+</view>

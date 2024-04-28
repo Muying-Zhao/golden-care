@@ -53,7 +53,7 @@ Component({
       value: 'medium'
     },
     // 是否显示边框
-    border: Boolean
+    border: Boolean,
   },
 
   /**

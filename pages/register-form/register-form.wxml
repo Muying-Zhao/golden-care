@@ -1,0 +1,83 @@
+<view class="wrapper">
+  <view class="title">
+    <view class="title__emp"></view>
+    填写个人信息
+  </view>
+  <view class="form">
+    <view class="form__item" style="height: {{err.name?'150':'110'}}rpx;">
+      <view class="form__item__title">个人姓名</view>
+      <view class="form__item__text">
+        <input class="form__item__input" data-value="{{name}}" value="{{name}}" bindinput="handleName" type="text" placeholder-class="placeholder" placeholder="请输入姓名" />
+      </view>
+      <view class="form__item-err" wx:if="{{err.name}}">姓名不能为空</view>
+    </view>
+    <view class="form__item">
+      <view class="form__item__title">性别</view>
+      <radio-group class="form__item__radio" bindchange="radioChange">
+        <label class="weui-cell weui-check__label">
+          <view class="weui-cell__hd">
+            <radio value="男" checked="true" />
+          </view>
+          <view class="weui-cell__bd">男</view>
+        </label>
+        <label class="weui-cell weui-check__label">
+          <view class="weui-cell__hd">
+            <radio value="女" checked="true" />
+          </view>
+          <view class="weui-cell__bd">女</view>
+        </label>
+      </radio-group>
+    </view>
+    <picker mode="date" model:value="{{date}}" end="2024-02-20" bindchange="bindDateChange">
+      <view class="form__item__picker">
+        出生日期:
+        <view class="form__item__text">
+          <view class="form__item__input">{{date}}</view>
+        </view>
+      </view>
+    </picker>
+    <view class="form__item" style="height: {{err.telephone?'150':'110'}}rpx;">
+      <view class="form__item__title">联系方式</view>
+      <view class="form__item__text">
+        <input class="form__item__input" data-value="{{telephone}}" value="{{telephone}}" bindinput="handleTel" type="text" placeholder-class="placeholder" placeholder="请输入电话号码" />
+      </view>
+      <view class="form__item-err" wx:if="{{err.telephone}}">电话号码不能为空</view>
+    </view>
+    <view class="form__item" style="height: {{err.area?'150':'110'}}rpx;">
+      <view class="form__item__title">常住地址</view>
+      <view class="form__item__text">
+        <input class="form__item__input"  data-value="{{area}}" value="{{area}}" bindinput="handleArea" type="text" placeholder-class="placeholder" placeholder="请输入常住地址" />
+      </view>
+      <view class="form__item-err" wx:if="{{err.area}}">常住地址不能为空</view>
+    </view>
+    <view class="form__item" style="height: {{err.likearea?'150':'110'}}rpx;">
+      <view class="form__item__title">意向服务区域</view>
+      <view class="form__item__text">
+        <input class="form__item__input" data-value="{{likearea}}" value="{{likearea}}" bindinput="handleLikeArea" type="text" placeholder-class="placeholder" placeholder="请选择意向服务区域" />
+      </view>
+      <view class="form__item-err" wx:if="{{err.likearea}}">意向服务区域不能为空</view>
+    </view>
+    <view class="form__item" style="height: {{err.organize?'150':'110'}}rpx;">
+      <view class="form__item__title">意向组织方</view>
+      <view class="form__item__text">
+        <input class="form__item__input" data-value="{{organize}}" value="{{organize}}" bindinput="handleOrganize" type="text" placeholder-class="placeholder" placeholder="请选择意向加入的组织方" />
+      </view>
+      <view class="form__item-err" wx:if="{{err.organize}}">意向组织方不能为空</view>
+    </view>
+  </view>
+  <view class="tips" wx:if="{{type==0}}">
+    <view class="tips__item">志愿者注册须知：</view>
+    <view class="tips__item">1.根据《辽宁省养老志愿服务“优选养老"工作规范（试行）》，养老志愿服务一般以就近就便原则开展，请选择您意向服务的区域和意向加入的养老志愿服务组织方。您所提交的志愿者注册申请将由意向加入的养老志愿服务组织方进行确认。</view>
+    <view class="tips__item">2重要提示:为保障您作为志愿者参与养老志愿服务“优选养老"的权益，请您在“优选养老"完成志愿者注册。
+    </view>
+  </view>
+  <view class="tips" wx:else>
+    <view class="tips__item">服务对象注册须知：</view>
+    <view class="tips__item">根据《辽宁省养老志愿服务“优选养老"工作规范(试行)》，养老志愿服务一般以就近就便原则开展，请选择您意向参加活动的区域和意向加入的养老志愿服务组织方。您所提交的服务对象注册申请由意向加入的养老志愿服务组织方进行确认后，即可作为服务对象报名参加养老志愿服务组织方开展的活动。
+    </view>
+  </view>
+  <view class="footer">
+    <i-button special="{{true}}" class="btn__cancel">取消</i-button>
+    <i-button special="{{true}}" class="btn__confirm" bind:tap="handleSubmit">注册</i-button>
+  </view>
+</view>

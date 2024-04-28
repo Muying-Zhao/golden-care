@@ -4,14 +4,15 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    tabsList:Object
+    tabsList:Object,
+    currentTabIndex:Number
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    currentTabsIndex:0,
+
   },
 
   /**
@@ -20,13 +21,15 @@ Component({
   methods: {
     handleChangeTab: function (event) {
       const index = event.currentTarget.dataset.index
-      if(index === this.data.currentTabsIndex){
+      // console.log(event.currentTarget.dataset,'dataset')
+      const name=event.currentTarget.dataset.name
+      if(index === this.data.currentTabIndex){
         return
       }
       this.setData({
-        currentTabsIndex: index
+        currentTabIndex: index
       })
-      this.triggerEvent('change', {index})
+      this.triggerEvent('change', {index,name})
     },
   }
 })

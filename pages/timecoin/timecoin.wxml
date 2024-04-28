@@ -1,0 +1,9 @@
+<view class="wrapper">
+ <view class="bgimg">
+  <image class="timecoin" src="../../images/timecoin.png"/>
+  <view class="bgimg__title">时间币总额</view>
+  <view class="bgimg__num">0.00</view>
+  <view class="bgimg__bestow">赠与</view>
+  <view class="bgimg__income">收支明细</view>
+ </view>
+</view>

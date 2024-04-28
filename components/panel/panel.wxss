@@ -7,7 +7,7 @@
   height: 260rpx;
   border-radius: 15rpx;
   display: flex;
-  box-shadow: 0rpx 0rpx 5rpx 5rpx  #eeeeee;
+  box-shadow: 0rpx 0rpx 4rpx 8rpx  #eeeeee;
 }
 .panel_right{
   width: 45%;
@@ -27,23 +27,8 @@
   padding: 0 15rpx 0 0;
   position: relative;
 }
-.btn{
-  position: absolute;
-  right: 20rpx;
-  bottom: 50rpx;
-  width: 125rpx;
-  height: 55rpx;
-  line-height: 55rpx;
-  font-size: 26rpx;
-  text-align: center;
-  border-radius: 30rpx;
-  color: #d87766;
-  border: 1rpx solid #d87766;
-}
-.btn_act{
-  color: #6faf92;
-  border: 1rpx solid #6faf92;
-}
+
+
 
 .panel_content{
   width: 100%;
@@ -67,4 +52,37 @@
 }
 .panel_time{
   color: #696969;
+}
+
+.status{
+  position: absolute;
+  right: 20rpx;
+  bottom: 50rpx;
+}
+.status_btn{
+  width: 125rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  font-size: 26rpx;
+  text-align: center;
+  color: #e6a911;
+  border-radius: 30rpx;
+  border: 1rpx solid #e6a911;
+}
+.status_btn-sign{
+  color: #6faf92;
+  border: 1rpx solid #6faf92;
+}
+.status_btn-end{
+  color: #ff8080;
+  border: 1rpx solid #ff8080;
+}
+.btn_act{
+  color: #f5d276;
+  border: 1rpx solid #f5d276;
+}
+
+
+.status_icon{
+  width: 110rpx;
 }

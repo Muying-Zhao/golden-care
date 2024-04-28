@@ -1,0 +1,27 @@
+.blear{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.mock{
+  max-height: 70%;
+  min-height: 32%;
+  background: #fff;
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+  padding: 30rpx 30rpx 0rpx 30rpx;
+}
+.mock_main{
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+
+
+

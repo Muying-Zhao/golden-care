@@ -2,7 +2,7 @@
   <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
   <mp-form wx:if="{{showForm}}" id="form" models="{{formData}}" rules="{{rules}}">
     <mp-cells>
-      <!-- show-error未通过校验显示红色 -->
+    <!-- show-error未通过校验显示红色 -->
       <mp-cell show-error prop="type" title="发布类型">
         <picker bindchange="bindTypePickerChange" range="{{typeList}}" range-key="name">
           <view wx:if="{{typePickerIndex !== null}}">
@@ -15,12 +15,23 @@
         <input bindinput="bindInputChange" data-field="title" value="{{formData.title}}" placeholder="内容与养老服务相关">
         </input>
       </mp-cell>
+      <mp-cell show-error prop="category_id" title="所属分类">
+        <picker bindchange="bindCategoryChange" range="{{categoryList}}" range-key="name">
+          <view wx:if="{{categoryPickerIndex !== null}}">
+            {{ categoryList[categoryPickerIndex].name}}
+          </view>
+          <view class="picker-placeholder" wx:else>请选择分类</view>
+        </picker>
+      </mp-cell>
       <mp-cell show-error prop="cover_image_id" title="封面图">
         <i-image-uploader files="{{files}}" maxCount="{{1}}" bind:hidepage="handleHidePage" bind:uploadsuccess="handleUploadSuccess"></i-image-uploader>
       </mp-cell>
-      <mp-cell show-error prop="description" title="活动描述">
+      <mp-cell show-error prop="description" title="服务描述">
         <textarea class="desc-textarea" bindinput="bindInputChange" data-field="description" value="{{formData.description}}" placeholder="必填，内容长度不少于 10 个字">
                 </textarea>
+      </mp-cell>
+      <mp-cell wx:if="{{formData.type === serviceTypeEnum.PROVIDE}}" title="提供地点" footer="是否需要用户提供地址信息">
+        <switch checked="{{form.designated_place}}" bindchange="handleSwitchChange" />
       </mp-cell>
       <mp-cell show-error prop="begin_date" title="开始日期">
         <picker mode="date" value="{{formData.begin_date}}" bindchange="bindBeginDateChange">
@@ -34,8 +45,8 @@
           <view class="picker-placeholder" wx:else>服务内容有效期结束日期</view>
         </picker>
       </mp-cell>
-      <mp-cell show-error prop="price" title="活动地点">
-        <input bindinput="bindInputChange" data-field="price" type="number" value="{{formData.price}}" placeholder="请填写活动地点" />
+      <mp-cell show-error prop="price" title="时间币">
+        <input bindinput="bindInputChange" data-field="price" type="number" value="{{formData.price}}" placeholder="服务价格，不少于 1" />
       </mp-cell>
     </mp-cells>
     <view class="form-floor">

@@ -1,13 +1,58 @@
-/* height: 100%;是相对于父元素的，即使最外层标签了，其实还有一个page标签 */
-page{
-  background: #fff;
-}
 .layout {
-  height: 100%;
+  background: #f7f7f7;
+}
+.header{
+  padding: 0 20rpx;
   background: #fff;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.header__city{
+  width: 160rpx;
+  height: 80rpx;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 40rpx;
+}
+.header__tri{
+  width: 0;
+  height: 0;
+  border-width: 10rpx;
+  border-color: #333 transparent transparent transparent;
+  border-style: solid;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}
+.header__search{
+  width: 520rpx;
+  height: 70rpx;
+  background: #f7f7f7;
+  border-radius: 40rpx;
+  display: flex;
+  align-items: center;
+}
+.header__search__pic{
+
+  margin: 0 10rpx 0 20rpx;
+}
+.header__search__text{
+  flex: 1;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #333333;
+  font-size: 30rpx;
+}
+.header__search__text-placeholder{
+  color: #666666;
+  font-size: 28rpx;
 }
 /* 轮播图 */
 .slider {
+  margin: 0 20rpx;
   scroll-snap-type: x mandatory;
   /* 溢出部分自动 */
   overflow: auto;
@@ -29,7 +74,138 @@ page{
 .slider_item_pic{
   width: 100%;
   height: 100%;
+  border-radius: 10rpx;
 }
-
-
-
+.nav{
+  padding: 0 20rpx;
+  background: #fff;
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.nav__item{
+  flex: 1;
+  height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.nav__item__pic{
+  width: 100rpx;
+  height: 100rpx;
+}
+.register{
+  padding: 20rpx 20rpx 0 20rpx;
+  background: #fff;
+  height: 180rpx;
+  border-radius: 20rpx;
+}
+.register__pic{
+  width: 100%;
+  height: 180rpx;
+  border-radius: 20rpx;
+}
+.recommend__title{
+  padding: 0 20rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+  font-size: 34rpx;
+  background: #fff;
+}
+.recommend__title__emp{
+  width: 12rpx;
+  height: 50rpx;
+  border-radius: 10rpx;
+  background: #81b99f;
+  margin-right: 10rpx;
+  margin: 0 20rpx 0 20rpx;
+}
+.recommend__content{
+  padding: 0 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.recommend__item{
+  width: 48%;
+  height: 330rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #fff;
+}
+.recommend__item__title{
+  color: #fff;
+  top: 160rpx;
+  padding-left: 28rpx;
+  width: 100%;
+  font-size: 32rpx;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, rgb(0, 0, 0,0), rgb(0, 0, 0,.4));
+  position: absolute;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.recommend__item__type{
+  background: #b43f42;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 20rpx;
+  border-radius: 10rpx;
+  width: 80rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+.recommend__item__category{
+  position: absolute;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #fff;
+  left: 30rpx;
+  top: 90rpx;
+  text-shadow: -2rpx 2rpx 5rpx rgba(51, 51, 51.3);
+}
+.recommend__item__pic{
+  width: 100%;
+  height: 220rpx;
+}
+.recommend__item__datetime{
+ overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ color: #888888;
+ background: #fff;
+ border-bottom-left-radius: 10rpx;
+ border-bottom-right-radius: 10rpx;
+ padding-left: 10rpx;
+ font-size: 30rpx;
+}
+.recommend__item__userInfo{
+ color: #888888;
+ width: 100%;
+ height: 50rpx;
+ display: flex;
+ align-items: center;
+ padding-left: 10rpx;
+ font-size: 30rpx;
+}
+.recommend__item__userInfo__avatar{
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 50%;
+}
+.recommend__item__userInfo___nickname{
+  margin-left: 10rpx;
+}

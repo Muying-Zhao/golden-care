@@ -1,0 +1,51 @@
+<view class="layout">
+  <i-tabs-act currentTabIndex="{{currentTabIndex}}" tabsList="{{actList}}" bind:change="handleTabChange"></i-tabs-act>
+  <view class="panel" wx:if="{{panelList.length}}">
+    <view class="item" wx:for="{{panelList}}" wx:key="index">
+      <view class="content" bind:tap="handleOfferSelect" data-index="{{index}}">
+        <view class="content_left">
+          <view class="content_left_type-tag">
+            在提供
+          </view>
+          <image src="{{item.cover_image}}" mode="" class="content_left_img" />
+        </view>
+        <view class="content_right">
+          <view class="content_row">
+            <view class="content_title ">
+              {{item.title}}
+            </view>
+            <view class="content_category ">
+              <i-icon name="biaoqian" color="#2ba245"></i-icon>
+              <view class="content_category_text">{{item.category}}</view>
+            </view>
+          </view>
+          <view class="content_row">
+            <view class="content_publisher">
+              <view class="content_publisher_avatar">
+                <image src="{{item.publish_acatar}}" mode="" class="content_publisher_avatar_pic" />
+              </view>
+              <view class="content_publisher_nickname">{{item.publish_nickname}}</view>
+            </view>
+            <view class="content_score">☆ {{item.score}}</view>
+          </view>
+          <view class="content_row">
+            <view class="content_time">
+              {{item.begin_date}}
+            </view>
+          </view>
+          <view class="content_row content_row4">
+            <view class="content_price">
+              ￥{{item.price}}
+            </view>
+            <view class="content_sales">
+              已售 {{item.solded}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="emp" wx:else>
+    暂时还没有任何服务
+  </view>
+</view>

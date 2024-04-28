@@ -1,0 +1,58 @@
+.wrapper{
+  background: #fff;
+  padding: 0 30rpx;
+  overflow: hidden;
+}
+/* .timecoin{
+  width: ;
+} */
+.bgimg{
+  margin-top: 30rpx;
+  height: 400rpx;
+  position: relative;
+}
+.timecoin{
+  width: 100%;
+  height: 400rpx;
+  border-radius: 15rpx;
+}
+.bgimg__title{
+  font-size: 36rpx;
+  font-weight: bold;
+  position: absolute;
+  left: 50rpx;
+  top: 70rpx;
+  color: #fff;
+  text-shadow: -5rpx 3rpx 5rpx rgba(51, 51, 51.3);
+}
+.bgimg__num{
+  font-size: 80rpx;
+  position: absolute;
+  left: 50rpx;
+  top: 120rpx;
+  color: #fff;
+}
+.bgimg__bestow{
+  font-size: 36rpx;
+  font-weight: bold;
+  position: absolute;
+  width: 210rpx;
+  height: 80rpx;
+  left: 110rpx;
+  top: 260rpx;
+  color: #427d88;
+  text-align: center;
+  line-height: 80rpx;
+}
+.bgimg__income{
+  font-size: 36rpx;
+  font-weight: bold;
+  position: absolute;
+  width: 210rpx;
+  height: 80rpx;
+  top: 260rpx;
+  color: #427d88;
+  text-align: center;
+  line-height: 80rpx;
+  left: 395rpx;
+}

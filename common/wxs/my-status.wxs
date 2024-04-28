@@ -1,0 +1,21 @@
+var my_convert = function (status) {
+  var myStatus
+  switch (status) {
+      case 0:
+        myStatus = '正在进行'
+          break;
+      case 1:
+        myStatus = '已完成'
+          break;
+      case 2:
+        myStatus = '已取消'
+          break;
+      default:
+        myStatus = '未知状态'
+  }
+  return myStatus
+}
+
+module.exports = {
+  my_convert: my_convert
+}

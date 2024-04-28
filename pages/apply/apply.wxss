@@ -1,7 +1,43 @@
-page{
+.layout {
+  width: 100%;
+  height: 100%;
+  background: #f7f7f7;
+}
+.plain{
+  width: 100%;
   background: #fff;
 }
-.layout {
-  height: 100%;
-  background: #fff;
+.plain__item{
+  padding: 0 30rpx;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+  font-size: 34rpx;
+  color: #333;
+  border-top: 1rpx solid #f7f7f7;
+}
+.plain__item__icon{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+  background: #59a5b3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plain__item__icon-icon3{
+  background: #6aa54d;
+}
+
+.plain__item__icon-icon2{
+  background: #c94b4f;
+}
+.plain__item__icon__pic{
+  width: 55rpx;
+  height: 55rpx;
+}
+.plain__item__icon__pic-icon3{
+  width: 60rpx;
+  height: 60rpx;
 }

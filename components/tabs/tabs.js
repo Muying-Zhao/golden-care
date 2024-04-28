@@ -23,10 +23,11 @@ Component({
       if(index === this.data.currentTabsIndex){
         return
       }
+      const name=event.currentTarget.dataset.name
       this.setData({
         currentTabsIndex: index
       })
-      this.triggerEvent('checkTab', {index})
+      this.triggerEvent('checkTab', {index,name})
     },
   }
 })

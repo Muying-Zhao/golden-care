@@ -1,0 +1,22 @@
+<view>
+  <view class="box">
+    <view class="box_img">
+      <image src="../../images/logo/swxz.png" class="box_img_pic"/>
+    </view>
+    <view class="box_title">
+      恋爱餐厅
+    </view>
+    <view class="box_version">
+      Version {{version}}
+    </view>
+  </view>
+  <view class="signature">
+    <view class="signature_logo">
+      <image src="../../images/logo/Auth.png" class="signature_logo_pic"/>
+    </view>
+
+    <view class="signature_title">
+    Copyright © 2023 Muying. All Rights Reserved
+    </view>
+  </view>
+</view>

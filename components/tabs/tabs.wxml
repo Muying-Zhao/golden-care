@@ -1,6 +1,6 @@
 <view class="tabs">
   <view class="tabs_items">
-    <view class="tabs_item" wx:for="{{tabsList}}" wx:key="index" bind:tap="handleCheckTabs" data-index="{{index}}">
+    <view class="tabs_item" wx:for="{{tabsList}}" wx:key="index" bind:tap="handleCheckTabs" data-index="{{index}}" data-name="{{item.name}}">
       <view class="tabs_item_labe {{currentTabsIndex===index?'tabs_item_labe-active':''}}" >
         {{item.title}}
       </view>

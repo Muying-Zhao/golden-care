@@ -1,7 +1,7 @@
-import serviceType from "../../enum/service-type";
+import serviceType from "../../enum/service_type";
 
 // 引入第三方类库
-// const moment=require("../../lib/moment")
+const moment=require("../../lib/moment")
 
 
 Component({
@@ -9,34 +9,38 @@ Component({
     form: Object
   },
   data: {
-    typeList: [
-      {
+
+    typeList: [{
         id: 1,
-        name: '关爱行动'
+        name: '提供服务'
       },
       {
         id: 2,
-        name: '弘扬孝善文化'
-      },
-      {
-        id: 3,
-        name: '志愿活动'
-      },
-      {
-        id: 4,
-        name: '其他'
-      },
+        name: '寻找服务'
+      }
+    ],
+    categoryList: [
+      {id: 1, name: "健康科普"},
+      {id: 2, name: "情感慰藉"},
+      {id: 3, name: "法律援助"},
+      {id: 4, name: "文体活动"},
+      {id: 5, name: "培训讲座"},
+      {id: 6, name: "网络防范"},
+      {id: 7, name: "协助服务"}
     ],
     typePickerIndex: null,
+    categoryPickerIndex: null,
     files: [],
     formData: {
       type: null,
       title: '',
+      category_id: null,
       cover_image_id: null,
       description: '',
+      designated_place: false,
       begin_date: '',
       end_date: '',
-      // price: ''
+      price: ''
     },
     rules: [{
         name: 'type',
@@ -49,13 +53,20 @@ Component({
         name: 'title',
         rules: [{
             required: true,
-            message: '服务标题内容不能少于 2 个字'
+            message: '服务标题内容不能为空'
           },
           {
-            minlength: 2,
-            message: '服务描述内容不能少于 2 个字'
+            minlength: 1,
+            message: '服务描述内容不能少于 1 个字'
           },
         ],
+      },
+      {
+        name: 'category_id',
+        rules: {
+          required: true,
+          message: '未指定服务所属分类'
+        },
       },
       {
         name: 'cover_image_id',
@@ -92,14 +103,38 @@ Component({
           // 结束日期校验规则
           {
             validator: function (rule, value, param, models) {
-              // if (moment(value).isSame(models.begin_date) || moment(value).isAfter(models.begin_date)) {
-              //   return null
-              // }
+              if (moment(value).isSame(models.begin_date) || moment(value).isAfter(models.begin_date)) {
+                return null
+              }
               return '结束时间必须大于开始时间'
             }
           }
         ],
 
+      },
+      {
+        name: 'price',
+        rules: [{
+            required: true,
+            message: '请指定服务价格'
+          },
+          {
+            validator: function (rule, value, param, models) {
+              // 正则表达式
+              const pattern = /(^[1-9]{1}[0-9]*$)|(^[0-9]*\.[0-9]{2}$)/
+              const isNum = pattern.test(value);
+
+              if (isNum) {
+                return null
+              }
+              return '价格必须是数字'
+            }
+          },
+          {
+            min: 1,
+            message: '天下没有免费的午餐'
+          },
+        ],
       },
     ],
     resetForm: true,
@@ -151,23 +186,30 @@ Component({
     },
 
     async init(form) {
+      let categoryList = this.data.categoryList
       // console.log(form.type,'999')
       const typePickerIndex = this.data.typeList.findIndex(item => item.id === form.type);
+      
+      const categoryPickerIndex = categoryList.findIndex(item => item.id === form.category_id)
 
       this.setData({
         // 展示表单
         showForm: true,
         showSwitch: typePickerIndex === 0,
         files: form.cover_image ? [form.cover_image] : [],
+        categoryPickerIndex: categoryPickerIndex > -1 ? categoryPickerIndex : null,
         typePickerIndex: typePickerIndex > -1 ? typePickerIndex : null,
+        categoryList,
         formData: {
           type: form.type,
           title: form.title,
+          category_id: form.category_id,
           cover_image_id: form.cover_image ? form.cover_image.id : null,
           description: form.description,
+          designated_place: form.designated_place,
           begin_date: form.begin_date,
           end_date: form.end_date,
-          // price: form.price
+          price: form.price
         },
       })
     },
@@ -180,6 +222,12 @@ Component({
       })
     },
 
+    bindCategoryChange(event) {
+      this.setData({
+        categoryPickerIndex: event.detail.value,
+        'formData.category_id': this.data.categoryList[event.detail.value].id
+      })
+    },
 
     bindBeginDateChange(event) {
       this.setData({
@@ -199,6 +247,12 @@ Component({
       } = event.currentTarget.dataset
       this.setData({
         [`formData.${field}`]: event.detail.value
+      })
+    },
+
+    handleSwitchChange(event) {
+      this.setData({
+        'formData.designated_place': event.detail.value
       })
     },
 
